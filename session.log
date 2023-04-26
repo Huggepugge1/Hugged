@@ -1,0 +1,6 @@
+INFO:(MainThread) /mnt/c/programmering/hugged/main.py:6 Test Info Message
+DEBUG:(MainThread) /mnt/c/programmering/hugged/main.py:7 Test Debug Message
+ERROR:(MainThread) /mnt/c/programmering/hugged/main.py:8 Test Error Message
+WARNING:(MainThread) /mnt/c/programmering/hugged/main.py:9 Test Warning Message
+CRITICAL:(MainThread) /mnt/c/programmering/hugged/main.py:10 Test Critical Message
+CRITICAL:(MainThread) /mnt/c/programmering/hugged/main.py:11 Test Fatal Message
