@@ -37,12 +37,18 @@ def process_input(key: str, current_file: fyle.File, stdscr):
         exit(0)
 
     elif key == "\n":
-        row, col = current_file.get_pos()
-        current_line = current_file.split_row()
+        buf = []
+        for current_line in current_file.buffer:
+            for subline in current_line.split_line():
+                buf.append(subline)
 
-        current_file.buffer[row].line = current_line[0]
-        current_file.buffer.insert(row + 1, line.Line(row + 1, current_line[1], stdscr.getmaxyx()[1] - NUMBER_OFFSET))
-        current_file.cursor.move_down(0)
+        if len(buf) < stdscr.getmaxyx()[0]:
+            row, col = current_file.get_pos()
+            current_line = current_file.split_row()
+
+            current_file.buffer[row].line = current_line[0]
+            current_file.buffer.insert(row + 1, line.Line(row + 1, current_line[1], stdscr.getmaxyx()[1] - NUMBER_OFFSET))
+            current_file.cursor.move_down(0)
         
         return current_file
 
